@@ -13,7 +13,6 @@
 #define TAPPING_TERM 280
 #define QUICK_TAP 175
 #define PRIOR_IDLE 150
-
 /* ---------------- Home Row Mods ---------------- */
 ZMK_HOLD_TAP(hm,
     flavor = "balanced";
@@ -33,63 +32,58 @@ ZMK_HOLD_TAP(hm_r,
     hold-trigger-key-positions = <KEYS_L THUMBS>;
     hold-trigger-on-release;
 )
-
 /* ---------------- Thumb Layer Tap (urob-style) ---------------- */
 ZMK_HOLD_TAP(lt_thumb,
     flavor = "balanced";
     tapping-term-ms = <200>;
     quick-tap-ms = <QUICK_TAP>;
+    require-prior-idle-ms = <PRIOR_IDLE>;
     bindings = <&mo>, <&kp>;
+    hold-trigger-on-release;
 )
-
 / {
 keymap {
 compatible = "zmk,keymap";
-
 /* ---------------- Base ---------------- */
 default_layer {
 display-name = "Base";
 bindings = <
-&kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp TILDE
+&kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp GRAVE
 &kp LCTRL   &hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T  &kp G          &kp K    &hm_r RCTRL N &hm_r RSHFT E &hm_r RALT I &hm_r RGUI O  &kp SQT
 &kp LSHFT   &kp Z        &kp X        &kp C        &kp D        &kp V          &kp M    &kp H         &kp COMMA     &kp DOT      &kp FSLH      &kp ESC
-                   &kp LGUI  &lt_thumb 1 BSPC  &lt_thumb 3 SPACE &lt_thumb 2 ENTER  &kp RALT  &kp RCTRL
+                   &kp LGUI  &lt_thumb 1 BSPC  &lt_thumb 3 SPACE &kp ENTER  &lt_thumb 2 RALT  &kp RCTRL
 >;
 };
-
 /* ---------------- Lower ---------------- */
 lower_layer {
 display-name = "Lower";
 bindings = <
-&kp TAB    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
-&trans     &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&kp LSHFT  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+&kp TAB    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7   &kp N8   &kp N9  &kp N0    &kp BSPC
+&trans     &trans &trans &trans &trans &trans      &trans &kp LEFT &kp DOWN &kp UP  &kp RIGHT &trans
+&kp LSHFT  &trans &trans &trans &trans &trans      &trans &trans   &trans   &trans  &trans    &trans
                       &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
-
 /* ---------------- Raise ---------------- */
 raise_layer {
 display-name = "Raise";
 bindings = <
-&kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+&kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp TILDE
 &kp LCTRL &trans   &trans &trans   &trans   &trans        &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
 &kp LSHFT &trans   &trans &trans   &trans   &trans        &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
                       &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
-
 /* ---------------- Bluetooth ---------------- */
 bt_layer {
 display-name = "Bluetooth";
 bindings = <
-&kp TAB   &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &trans &trans &trans &trans &trans
-&kp LCTRL &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
+&kp TAB    &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans &trans &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans      &trans &trans &trans &trans &trans &trans
+&kp LCTRL  &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans &trans &trans
                       &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
-
 extra_1 { status = "reserved"; };
 extra_2 { status = "reserved"; };
 extra_3 { status = "reserved"; };
