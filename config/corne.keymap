@@ -34,13 +34,6 @@ ZMK_HOLD_TAP(hm_r,
     hold-trigger-on-release;
 )
 
-/* ---------------- Backspace/Delete ---------------- */
-ZMK_HOLD_TAP(bsdel,
-    flavor = "tap-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&kp BSPC>, <&kp DEL>;
-)
-
 /* ---------------- Thumb Layer Tap (urob-style) ---------------- */
 ZMK_HOLD_TAP(lt_thumb,
     flavor = "balanced";
@@ -60,7 +53,7 @@ bindings =
 &kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp TILDE
 &kp LCTRL   &hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T  &kp G          &kp K    &hm_r RCTRL N &hm_r RSHFT E &hm_r RALT I &hm_r RGUI O  &kp SQT
 &kp LSHFT   &kp Z        &kp X        &kp C        &kp D        &kp V          &kp M    &kp H         &kp COMMA     &kp DOT      &kp FSLH      &kp ESC
-                   &kp LGUI  &lt_thumb 1 SPACE  &lt_thumb 3 ESC  &lt_thumb 2 ENTER  &kp RALT  &kp RCTRL
+                   &kp LGUI  &lt_thumb 1 BSPC  &lt_thumb 3 SPACE &lt_thumb 2 ENTER  &kp RALT  &kp RCTRL
 >;
 };
 
@@ -71,7 +64,7 @@ bindings =
 &kp TAB    &kp N1 &kp N2 &kp N3 &kp N4 &kp N5      &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC
 &trans     &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
 &kp LSHFT  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-                      &kp LGUI &trans &bsdel &trans &kp RALT &kp RCTRL
+                      &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
 
@@ -82,7 +75,7 @@ bindings =
 &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
 &kp LCTRL &trans   &trans &trans   &trans   &trans        &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
 &kp LSHFT &trans   &trans &trans   &trans   &trans        &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
-                      &kp LGUI &trans &bsdel &trans &kp RALT &kp RCTRL
+                      &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
 
@@ -93,7 +86,7 @@ bindings =
 &kp TAB   &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &trans &trans &trans &trans &trans &trans &trans
 &kp LCTRL &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans &trans
-                      &kp LGUI &trans &bsdel &trans &kp RALT &kp RCTRL
+                      &kp LGUI &trans &kp SPACE &trans &kp RALT &kp RCTRL
 >;
 };
 
