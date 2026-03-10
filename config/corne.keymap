@@ -39,15 +39,6 @@ ZMK_HOLD_TAP(hm_r,
     hold-trigger-on-release;
 )
 
-/* ---------------- Layer Tap ---------------- */
-
-ZMK_HOLD_TAP(lt,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP>;
-    bindings = <&mo>, <&kp>;
-)
-
 /* ---------------- Backspace/Delete ---------------- */
 
 ZMK_HOLD_TAP(bsdel,
@@ -66,11 +57,11 @@ default_layer {
 display-name = "Base";
 bindings = <
 
-&kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp BSPC
+&kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp TILDE
 &kp LCTRL   &hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T  &kp G          &kp K    &hm_r RCTRL N &hm_r RSHFT E &hm_r RALT I &hm_r RGUI O  &kp SQT
 &kp LSHFT   &kp Z        &kp X        &kp C        &kp D        &kp V          &kp M    &kp H         &kp COMMA     &kp DOT      &kp FSLH      &kp ESC
 
-                             &kp LGUI   &lt 1 SPACE   &bsdel   &lt 2 ENTER   &kp RALT   &kp RCTRL
+                             &kp LGUI   &lt 1 SPACE   &lt   &lt 2 ENTER   &kp RALT   &kp RCTRL
 
 >;
 };
