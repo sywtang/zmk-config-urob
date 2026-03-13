@@ -59,7 +59,7 @@ bindings = <
 &kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp GRAVE
 &kp LCTRL   &hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T  &kp G          &kp K    &hm_r RCTRL N &hm_r RSHFT E &hm_r RALT I &hm_r RGUI O  &kp SQT
 &kp LSHFT   &kp Z        &kp X        &kp C        &kp D        &kp V          &kp M    &kp H         &kp COMMA     &kp DOT      &kp FSLH      &caps_word
-                   &kp LGUI  &lt_thumb 1 BSPC  &lt_thumb 3 SPACE &kp ENTER  &lt_thumb 2 RALT  &kp RCTRL
+                   &kp LGUI  &lt_thumb 1 SPACE  &lt_thumb 3 BSPC &kp ENTER  &lt_thumb 2 RALT  &kp RCTRL
 >;
 };
 /* ---------------- Lower ---------------- */
@@ -96,10 +96,10 @@ bindings = <
 gaming_layer {
 display-name = "Game";
 bindings = <
-&lt 5 TAB  &kp Q  &kp W  &kp F  &kp P  &kp B      &trans &trans    &kp UP   &trans    &trans  &trans
-&kp LCTRL  &kp A  &kp R  &kp S  &kp T  &kp G      &trans &kp LEFT  &kp DOWN &kp RIGHT &trans  &trans
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp D  &kp V      &trans &kp HOME  &kp END  &kp PG_DN &kp PG_UP &trans
-                &trans  &kp BSPC  &kp SPACE  &kp INS  &kp DEL  &trans
+&lt 5 TAB  &kp Q  &kp W  &kp F  &kp P  &kp B      &trans &trans    &kp UP   &trans    &kp DEL  &kp END
+&kp LCTRL  &kp A  &kp R  &kp S  &kp T  &kp G      &trans &kp LEFT  &kp DOWN &kp RIGHT &kp HOME &kp INS
+&kp LSHFT  &kp Z  &kp X  &kp C  &kp D  &kp V      &trans &trans  &trans  &trans &kp PG_DN &kp PG_UP
+                &trans  &kp SPACE  &kp SPACE  &kp ENTER  &kp DEL  &kp ESC
 >;
 };
 /* ---------------- Gaming Numbers ---------------- */
