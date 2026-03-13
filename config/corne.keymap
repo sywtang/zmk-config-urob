@@ -59,7 +59,7 @@ bindings = <
 &kp TAB     &kp Q        &kp W        &kp F        &kp P        &kp B          &kp J    &kp L         &kp U         &kp Y        &kp SEMI      &kp GRAVE
 &kp LCTRL   &hm LGUI A   &hm LALT R   &hm LSHFT S  &hm LCTRL T  &kp G          &kp K    &hm_r RCTRL N &hm_r RSHFT E &hm_r RALT I &hm_r RGUI O  &kp SQT
 &kp LSHFT   &kp Z        &kp X        &kp C        &kp D        &kp V          &kp M    &kp H         &kp COMMA     &kp DOT      &kp FSLH      &caps_word
-                   &kp LGUI  &lt_thumb 1 SPACE  &lt_thumb 3 BSPC &kp ENTER  &lt_thumb 2 RALT  &kp RCTRL
+                   &kp LGUI  &lt_thumb 1 BSPC  &lt_thumb 3 SPACE &kp ENTER  &lt_thumb 2 RALT  &kp RCTRL
 >;
 };
 /* ---------------- Lower ---------------- */
